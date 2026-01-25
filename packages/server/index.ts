@@ -2,6 +2,7 @@ import express from 'express';
 import type { Response, Request } from 'express';
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
+import z from 'zod';
 
 dotenv.config();
 
@@ -29,7 +30,29 @@ let lastResponseId: string | null = null;
 // conv2 -> 200
 const conversations = new Map<string, string>();
 
+//Input validation with zod
+const chatSchema = z.object({
+   prompt: z
+      .string()
+      .trim()
+      .min(1, 'Prompt is required. ')
+      .max(1000, 'Prompt is too long (max 1000 characters)'),
+
+   // z.string().uuid() is deprecated so we use only z.uuid()
+   conversationId: z.uuid(),
+});
+
 app.post('/api/chat', async (req: Request, res: Response) => {
+   // Validate incoming request data with handler (zod)
+   const parsedResult = chatSchema.safeParse(req.body);
+
+   // Catch and handle thrown error
+   if (!parsedResult.success) {
+      // 'parsedResult.error.format' is deprecated.ts(6387) so we Use the z.treeifyError(err) function instead.
+      res.status(400).json(z.treeifyError(parsedResult.error));
+      return;
+   }
+
    const { prompt, conversationId } = req.body;
 
    const response = await client.responses.create({
