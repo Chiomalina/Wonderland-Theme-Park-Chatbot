@@ -1,3 +1,6 @@
+import type { KeyboardEvent } from 'react';
+import { useRef } from 'react';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Button } from './ui/button';
 import { FaArrowUp } from 'react-icons/fa';
@@ -7,13 +10,20 @@ type FormData = {
 };
 
 function ChatBot() {
+   const conversationId = useRef(crypto.randomUUID());
    // Destructure toolboxes to be used in useForm before accessing them.
    const { register, handleSubmit, reset, formState } = useForm<FormData>();
 
-   const onSubmit = (data: FormData) => {
-      console.log(data);
+   const onSubmit = async ({ prompt }: FormData) => {
+      console.log(prompt);
       // reseting the text area to empty
       reset();
+
+      const { data } = await axios.post('/api/chat', {
+         prompt: prompt,
+         conversationId: conversationId.current,
+      });
+      console.log(data);
    };
 
    const onKeyDown = (e: KeyboardEvent<HTMLFormElement>) => {
