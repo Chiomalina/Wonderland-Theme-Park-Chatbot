@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import type { KeyboardEvent } from 'react';
 import { useRef, useState } from 'react';
 import axios from 'axios';
@@ -59,7 +60,7 @@ function ChatBot() {
                            : 'bg-gray-100 text-black self-start'
                      }`}
                >
-                  {message.content}
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
                </p>
             ))}
          </div>
