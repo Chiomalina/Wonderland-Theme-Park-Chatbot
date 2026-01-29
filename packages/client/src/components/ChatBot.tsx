@@ -22,7 +22,8 @@ type Message = {
 function ChatBot() {
    const [messages, setMessages] = useState<Message[]>([]);
    const [isBotTyping, setIsBotTyping] = useState(false);
-   const formRef = useRef<HTMLFormElement | null>(null);
+   const [error, setError] = useState('');
+   const lastMessageref = useRef<HTMLDivElement | null>(null);
 
    const conversationId = useRef(crypto.randomUUID());
 
@@ -31,22 +32,32 @@ function ChatBot() {
 
    // Ensuring scroll event
    useEffect(() => {
-      formRef.current?.scrollIntoView({ behavior: 'smooth' });
+      lastMessageref.current?.scrollIntoView({ behavior: 'smooth' });
    }, [messages]);
 
    const onSubmit = async ({ prompt }: FormData) => {
-      setMessages((prev) => [...prev, { content: prompt, role: 'user' }]);
-      setIsBotTyping(true);
+      try {
+         setMessages((prev) => [...prev, { content: prompt, role: 'user' }]);
+         setIsBotTyping(true);
+         setError('');
 
-      // reseting the text area to empty
-      reset();
+         // reseting the text area to empty
+         reset({ prompt: '' });
 
-      const { data } = await axios.post<ChatResponse>('/api/chat', {
-         prompt: prompt,
-         conversationId: conversationId.current,
-      });
-      setMessages((prev) => [...prev, { content: data.message, role: 'bot' }]);
-      setIsBotTyping(false);
+         const { data } = await axios.post<ChatResponse>('/api/chat', {
+            prompt: prompt,
+            conversationId: conversationId.current,
+         });
+         setMessages((prev) => [
+            ...prev,
+            { content: data.message, role: 'bot' },
+         ]);
+      } catch (error) {
+         console.error(error);
+         setError('Something went wrong!');
+      } finally {
+         setIsBotTyping(false);
+      }
    };
 
    const onKeyDown = (e: KeyboardEvent<HTMLFormElement>) => {
@@ -63,16 +74,16 @@ function ChatBot() {
          e.preventDefault();
          e.clipboardData.setData('text/plain', selection);
       }
-   }
-   
+   };
 
    return (
-      <div>
-         <div className="flex flex-col gap-4 ml-2 mr-2 mt-3 py-5 px-5">
+      <div className="flex flex-col h-screen ">
+         <div className="flex flex-col flex-1 gap-4 mb-6 overflow-y-auto ">
             {messages.map((message, index) => (
-               <p
+               <div
                   key={index}
                   onCopy={onCopyMessage}
+                  ref={index === messages.length - 1 ? lastMessageref : null}
                   className={`px-3 py-1 rounded-xl 
                      ${
                         message.role === 'user'
@@ -81,7 +92,7 @@ function ChatBot() {
                      }`}
                >
                   <ReactMarkdown>{message.content}</ReactMarkdown>
-               </p>
+               </div>
             ))}
             {isBotTyping && (
                <div className="flex gap-1 px-3 py-3 bg-gray-300 rounded-xl self-start">
@@ -90,13 +101,13 @@ function ChatBot() {
                   <div className="w-2 h-2 rounded-full bg-gray-800 animate-pulse [animation-delay:0.4s]"></div>
                </div>
             )}
+            {error && <p className="text-red-500">{error}</p>}
          </div>
          <form
             onSubmit={handleSubmit(onSubmit)}
             onKeyDown={onKeyDown}
             // Scrolling effect
-            ref={formRef}
-            className="mt-4 mr-3 flex flex-col gap-2 items-end border-2 p-4 rounded-3xl"
+            className="mt-4 mr-3 mb-4 flex flex-col gap-2 items-end border-2 p-4 rounded-3xl"
          >
             <textarea
                // ... allows spreading all methods from register
@@ -106,6 +117,7 @@ function ChatBot() {
                   // Ensure form submission arrow is disabled on white spaces and 0 length
                   validate: (data) => data.trim().length > 0,
                })}
+               autoFocus
                className="w-full border-0 focus:outline-0 resize-none"
                placeholder="Ask anything"
                maxLength={1000}
