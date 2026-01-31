@@ -1,137 +1,143 @@
+# 🏰 WonderWorld Theme Park Guide
 
-# 🏰 Welcome to WonderWorld – Where Wonder Comes to Life!
+Welcome to **WonderWorld**, a magical theme park where imagination comes to life.
+This document contains the official park information used by the WonderWorld chatbot.
 
 ---
 
-## 🎟️ Ticket & Pricing Information
+## 🎟️ Tickets & Pricing
 
-| Ticket Type                | Price (USD) | Notes                                 |
-|---------------------------|-------------|---------------------------------------|
-| General Admission (12+)   | $129        | Includes all rides and attractions    |
-| Child Admission (3–11)    | $109        | Under 3 enters free                   |
-| Senior Admission (65+)    | $99         | Valid ID required                     |
-| Multi-Day Pass (3 Days)   | $299        | Park-hopping included                 |
-| FastLane Pass Add-on      | $59         | Skip the lines on select attractions  |
-| Annual Pass               | $899        | Includes parking & special discounts  |
-| Parking                   | $35/day     | Preferred parking: $50/day            |
+| Ticket Type             | Price (USD) | Details                             |
+| ----------------------- | ----------- | ----------------------------------- |
+| General Admission (12+) | $129        | Access to all rides and attractions |
+| Child Admission (3–11)  | $109        | Children under 3 enter free         |
+| Senior Admission (65+)  | $99         | Valid ID required                   |
+| Multi-Day Pass (3 Days) | $299        | Includes park-hopping               |
+| FastLane Pass (Add-on)  | $59         | Skip lines on select attractions    |
+| Annual Pass             | $899        | Includes parking and discounts      |
+| Parking                 | $35/day     | Preferred parking: $50/day          |
 
-> 🎟️ All tickets include access to daytime shows, parades, and fireworks.
+All tickets include daytime shows, parades, and fireworks.
 
 ---
 
 ## 🕰️ Park Hours
 
-| Area                   | Opening | Closing |
-|------------------------|---------|---------|
-| Main Park              | 9:00 AM | 10:00 PM|
-| WonderWorld Hotel      | 24/7    |         |
-| Magic Dining Court     | 10:30 AM| 9:30 PM |
-| Wonder Waterpark       | 10:00 AM| 6:00 PM |
-| Night Spectacle Parade | 8:30 PM | 9:00 PM |
+| Area                   | Opens     | Closes   |
+| ---------------------- | --------- | -------- |
+| Main Park              | 9:00 AM   | 10:00 PM |
+| WonderWorld Hotel      | Open 24/7 |          |
+| Magic Dining Court     | 10:30 AM  | 9:30 PM  |
+| Wonder Waterpark       | 10:00 AM  | 6:00 PM  |
+| Night Spectacle Parade | 8:30 PM   | 9:00 PM  |
 
-> 🗓️ Hours may vary on holidays or special events. Ask the chatbot for today’s hours.
-
----
-
-## 🎢 Ride & Attraction Highlights
-
-### For Young Kids (Ages 3–7)
-
-- **Pixie Meadow Carousel** – Gentle ride through fairyland animals  
-- **Bubbles & Giggles Lagoon** – Splash pad with playful animations  
-- **Treetop Tots Adventure** – Mini obstacle course for little ones  
-- **Snuggle Safari Train** – Jungle-themed scenic ride with animatronics  
-
-### For All Ages (Families & Teens)
-
-- **Quest of the Crystal Guardians** – Indoor 4D interactive light-blaster ride  
-- **Dreamlight Express** – Scenic storytelling train ride  
-- **Wonder SkyRide** – Flying gondola with panoramic views  
-- **Legends on Ice** – Live skating show with magical themes  
-
-### For Thrill Seekers (Ages 10+)
-
-- **Phantom Vale Coaster** – Haunted high-speed coaster  
-- **AetherStorm: Flight of Fury** – Suspended inverted coaster with loops  
-- **Doom Mine Plunge** – Water-coaster with backward drops  
-- **Galactic Warp Simulator** – VR space battle motion simulator  
-
-### For Adults or Slower-Paced Visitors
-
-- **Mystic Gardens Walkthrough** – Tranquil botanical trail  
-- **Royal Theater** – Broadway-style live musicals  
-- **Twilight River Cruise** – Serene evening boat ride  
-- **Vintage Time Machine** – Nostalgic ride through dreamy eras  
+Hours may vary during holidays or special events.
 
 ---
 
-## 🏨 Accommodation Options
+## 🎢 Rides & Attractions
 
-### WonderWorld Hotel (On-site Luxury)
+### 👶 Young Kids (Ages 3–7)
 
-- **Standard Room:** $299/night (sleeps 4)  
-- **Suite:** $499/night (sleeps 6)  
-- **Features:**  
-  - Early park access (8 AM)  
-  - Free breakfast  
-  - Character dining  
-  - Free shuttle to park  
+- Pixie Meadow Carousel – Gentle fairy-themed carousel
+- Bubbles & Giggles Lagoon – Interactive splash play area
+- Treetop Tots Adventure – Mini obstacle course
+- Snuggle Safari Train – Jungle-themed scenic ride
 
-### Magic Grove Inn (Budget, 5-min walk)
+### 👨‍👩‍👧‍👦 Families & Teens
 
-- **Rooms from:** $139/night  
-- **Features:**  
-  - Park shuttle every 20 mins  
-  - Discounted park ticket bundles  
+- Quest of the Crystal Guardians – Indoor 4D interactive ride
+- Dreamlight Express – Storytelling train ride
+- Wonder SkyRide – Gondola ride with panoramic views
+- Legends on Ice – Live ice skating show
+
+### 🎢 Thrill Seekers (Ages 10+)
+
+- Phantom Vale Coaster – High-speed haunted coaster
+- AetherStorm: Flight of Fury – Inverted looping coaster
+- Doom Mine Plunge – Water coaster with backward drops
+- Galactic Warp Simulator – VR motion space battle
+
+### 🌿 Relaxed Experiences
+
+- Mystic Gardens Walkthrough – Botanical walking trail
+- Royal Theater – Broadway-style musicals
+- Twilight River Cruise – Evening boat ride
+- Vintage Time Machine – Nostalgic storytelling ride
 
 ---
 
-## 🍽️ Dining Options
+## 🏨 Hotels & Accommodation
 
-- **Royal Banquet Hall** – Castle-themed fine dining w/ character visits  
-- **Galaxy Grub Hub** – Sci-fi quick service with plant-based options  
-- **Jungle Munch Café** – Family-friendly, classic favorites  
-- **Meadow Market** – Snacks, smoothies, coffee  
+### WonderWorld Hotel (On-Site)
 
-> 🍱 Most locations accommodate allergies & dietary needs.
+- Standard Room: $299/night (sleeps 4)
+- Suite: $499/night (sleeps 6)
+
+Includes:
+
+- Early park entry (8:00 AM)
+- Free breakfast
+- Character dining
+- Complimentary park shuttle
+
+### Magic Grove Inn (Nearby)
+
+- Rooms from $139/night
+- 5-minute walk to the park
+- Shuttle every 20 minutes
+- Discounted ticket bundles available
 
 ---
 
-## 🎉 Shows, Parades & Events
+## 🍽️ Dining
 
-- **Royal Parade of Lights** – 7:00 PM nightly  
-- **Dragon Awakening Show** – 3:00 & 5:00 PM daily  
-- **Nightfall Spectacular Fireworks** – 9:30 PM nightly  
+- Royal Banquet Hall – Castle-themed fine dining with characters
+- Galaxy Grub Hub – Sci-fi quick service with plant-based options
+- Jungle Munch Café – Family-friendly classics
+- Meadow Market – Snacks, smoothies, and coffee
+
+Most locations support dietary and allergy requirements.
+
+---
+
+## 🎉 Shows & Events
+
+- Royal Parade of Lights – 7:00 PM nightly
+- Dragon Awakening Show – 3:00 PM & 5:00 PM daily
+- Nightfall Spectacular Fireworks – 9:30 PM nightly
 
 ---
 
 ## 👶 Child Services
 
-- Baby Care Centers across all zones  
-- Stroller rentals ($20/day)  
-- Complimentary child locator wristbands  
+- Baby care centers in all zones
+- Stroller rentals ($20/day)
+- Complimentary child locator wristbands
 
 ---
 
-## 🧙‍♀️ Accessibility Services
+## ♿ Accessibility Services
 
-- Wheelchair & ECV rentals ($25–$50/day)  
-- Hearing-assist devices for theaters  
-- Clearly marked ride accessibility info  
-- Sensory quiet zones  
-- Service animals welcome  
+- Wheelchair and ECV rentals ($25–$50/day)
+- Hearing-assist devices in theaters
+- Clearly marked ride accessibility details
+- Sensory-friendly quiet zones
+- Service animals welcome
 
 ---
 
-## 🤖 Ask the Chatbot About…
+## 🤖 Common Chatbot Questions
 
-- 🧒 Best rides for toddlers, kids, or teens  
-- 🎢 Thrill ride recommendations  
-- 🗺️ Park directions & live maps  
-- ⏳ Wait times & FastLane availability  
-- 🕒 Showtimes, events, & parades  
-- 🍽️ Dining menus & reservations  
-- 🏨 Hotel availability & booking  
-- 🌦️ Weather & indoor activities  
-- 🔍 Lost & found  
-- 📏 Height or age restrictions  
+The chatbot can help with:
+
+- Best rides for toddlers, kids, or teens
+- Thrill ride recommendations
+- Park directions and maps
+- Wait times and FastLane access
+- Showtimes and parade schedules
+- Dining menus and reservations
+- Hotel availability and booking
+- Weather and indoor attractions
+- Lost and found
+- Height or age restrictions
