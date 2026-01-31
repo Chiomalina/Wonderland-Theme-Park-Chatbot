@@ -1,13 +1,22 @@
-// Implementation details(the main hidden logic)
-const conversations = new Map<string, string>();
+/**
+ * In-memory store mapping a conversation ID to the last model response ID.
+ * This enables conversational continuity when interacting with the LLM.
+ * Note: This is process-local and will reset on server restart.
+ */
+const conversationStore = new Map<string, string>();
 
-// Interface exported as constant
+/**
+ * Repository responsible for managing conversation state.
+ * Acts as a thin abstraction over the in-memory store.
+ */
 export const ConversationRepository = {
-   getLastResponseId(conversationId: string) {
-      return conversations.get(conversationId);
+   // Retrieves the last response ID for a given conversation.
+   getLastResponseId(conversationId: string): string | undefined {
+      return conversationStore.get(conversationId);
    },
 
+   // Persists the last response ID for a given conversation.
    setLastResponseId(conversationId: string, responseId: string) {
-      return conversations.set(conversationId, responseId);
+      return conversationStore.set(conversationId, responseId);
    },
 };
