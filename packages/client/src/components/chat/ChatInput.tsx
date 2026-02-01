@@ -1,53 +1,54 @@
 import type { KeyboardEvent } from 'react';
-import { Button } from '../ui/button';
-import { FaArrowUp } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
+import { FaArrowUp } from 'react-icons/fa';
+import { Button } from '../ui/button';
 
 export type ChatFormData = {
    prompt: string;
 };
 
 type Props = {
-   onSubmit: (data: ChatFormData) => void;
+   onSubmit: (data: ChatFormData) => void | Promise<void>;
 };
 
-const ChatInput = ({ onSubmit }: Props) => {
-   // Destructure toolboxes to be used in useForm before accessing them.
-   const { register, handleSubmit, reset, formState } = useForm<ChatFormData>();
+const MAX_LEN = 1000;
 
-   const submit = handleSubmit((data) => {
-      // reseting the text area to empty
-      reset({ prompt: '' });
-      onSubmit(data);
+const ChatInput = ({ onSubmit }: Props) => {
+   const { register, handleSubmit, reset, formState } = useForm<ChatFormData>({
+      defaultValues: { prompt: '' },
+      mode: 'onChange',
    });
 
-   const handleKeydown = (e: KeyboardEvent<HTMLFormElement>) => {
+   const submit = handleSubmit(async (data) => {
+      reset({ prompt: '' });
+      await onSubmit(data);
+   });
+
+   const handleKeydown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
       if (e.key === 'Enter' && !e.shiftKey) {
          e.preventDefault();
-         submit();
+         void submit();
       }
    };
+
    return (
       <form
          onSubmit={submit}
-         onKeyDown={handleKeydown}
-         // Scrolling effect
-         className="mt-4 mr-3 mb-4 flex flex-col gap-2 items-end border-2 p-4 rounded-3xl"
+         className="mt-4 mr-3 mb-4 flex flex-col items-end gap-2 rounded-3xl border-2 p-4"
       >
          <textarea
-            // ... allows spreading all methods from register
             {...register('prompt', {
-               // disable submission on empty form
                required: true,
-               // Ensure form submission arrow is disabled on white spaces and 0 length
-               validate: (data) => data.trim().length > 0,
+               validate: (value) => value.trim().length > 0,
             })}
+            onKeyDown={handleKeydown}
             autoFocus
-            className="w-full border-0 focus:outline-0 resize-none"
+            className="w-full resize-none border-0 focus:outline-0"
             placeholder="Ask anything"
-            maxLength={1000}
+            maxLength={MAX_LEN}
          />
-         <Button disabled={!formState.isValid} className="rounded-full w-9 h-9">
+
+         <Button disabled={!formState.isValid} className="h-9 w-9 rounded-full">
             <FaArrowUp />
          </Button>
       </form>
