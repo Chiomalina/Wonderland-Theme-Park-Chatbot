@@ -48,7 +48,7 @@ export const chatService = {
             ConversationRepository.getLastResponseId(conversationId),
       });
 
-      // Persist las response ID to maintain conversational context
+      // Persist las response ID to maintain conversational context//
       ConversationRepository.setLastResponseId(conversationId, response.id);
 
       return {
